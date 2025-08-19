@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-vision - Contact</title>
+  <link rel="shortcut icon" href="img/illustration/1-Photoroom.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>E-vision - Contact</title>
+
   <style>
     .bodys {
       font-family: Arial, sans-serif;
@@ -86,6 +89,7 @@
       background: #8e44ad;
     }
 
+    /* Décorations violettes simplifiées */
     .bg-shape {
       position: absolute;
       top: -30px;
@@ -128,7 +132,7 @@
       border: 1px solid #f5c6cb;
     }
 
-    .whatsapp-info {
+    .formspree-info {
       text-align: center;
       margin-top: 20px;
       padding: 10px;
@@ -136,107 +140,123 @@
       border-radius: 8px;
       font-size: 14px;
     }
-    
-    .whatsapp-btn {
-      background-color: #25D366 !important;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-    
-    .debug-info {
-      font-size: 12px;
-      color: #666;
-      margin-top: 15px;
-      padding: 10px;
-      background-color: #f9f9f9;
-      border-radius: 5px;
-      display: none;
-    }
   </style>
 </head>
 <body>
 
-<div class="container-fluid">
-    <header>
-        <nav class="navbar navbar-expand-lg">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a href="#" class="logo"><img src="img/illustration/2-Photoroom.png" alt="logo" style="height: 40px;"></a>
+    <div class="container-fluid">
+        <header>
+            <nav class="navbar navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a href="#" class="logo"><img src="img/illustration/2-Photoroom.png" alt="logo"></a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="nav-links navbar-nav ms-5 mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">A propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+                <!-- Liens navigation + boutons dans le collapse -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav-links navbar-nav ms-5 mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">A propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="nav-buttons d-flex gap-5">
+                  <a href="#" class="btn-connect">Contactez-nous</a>
+              </div>
+            </nav>
+        </header>
+    </div>        
+
+  <div class="bodys">
+    <div class="form-container">
+        <div class="bg-shape"></div>
+        <div class="bg-shape2"></div>
+        
+        <h2>Contactez-nous</h2>
+        
+        <!-- Messages de statut (gérés par Formspree) -->
+        <div class="status-message success" id="successMessage" style="display: none;">
+          Merci ! Votre message a été envoyé avec succès.
+        </div>
+        
+        <div class="status-message error" id="errorMessage" style="display: none;">
+          Veuillez remplir tous les champs obligatoires.
+        </div>
+        
+        <!-- 
+          FORMSPREE INTÉGRATION 
+          Remplacez VOTRE_ID_FORMSPREE par l'ID de votre formulaire Formspree
+        -->
+        <form>
+          <label for="entreprise">Nom de votre entreprise</label>
+          <input type="text" id="entreprise" name="entreprise" required>
+    
+          <label for="email">Adresse e-mail</label>
+          <input type="email" id="email" name="email" required>
+    
+          <label for="phone">Numéro de téléphone</label>
+          <div class="phone-container">
+            <select id="country" name="country">
+              <option value="+225">🇨🇮 Côte d'Ivoire (+225)</option>
+              <option value="+33">🇫🇷 France (+33)</option>
+              <option value="+1">🇺🇸 USA (+1)</option>
+              <option value="+44">🇬🇧 UK (+44)</option>
+              <option value="+221">🇸🇳 Sénégal (+221)</option>
+            </select>
+            <input type="tel" id="phone" name="phone" placeholder="Votre numéro" required>
+          </div>
+    
+          <label for="besoin">Décrivez votre besoin</label>
+          <textarea id="besoin" name="besoin" rows="4" placeholder="Expliquez votre projet ou besoin..." required></textarea>
+    
+          <button type="submit" class="btn">Envoyer le message</button>
+        </form>
+        
+        <div class="formspree-info">
+          <p>Vos informations seront envoyées directement à notre équipe. Nous vous répondrons dans les plus brefs délais.</p>
+        </div>
+      </div>
+  </div>
+
+  <footer class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5>MENU</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Portfolio</a></li>
                 </ul>
             </div>
-            <div class="nav-buttons d-flex gap-5">
-                <a href="#" class="btn-connect">Contactez-nous</a>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5>INFORMATIONS</h5>
+                <ul class="footer-links">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Témoignages</a></li>
+                    <li><a href="#">Documentations</a></li>
+                </ul>
             </div>
-        </nav>
-    </header>
-</div>        
-
-<div class="bodys">
-  <div class="form-container">
-      <div class="bg-shape"></div>
-      <div class="bg-shape2"></div>
-      
-      <h2>Contactez-nous via WhatsApp</h2>
-      
-      <div class="status-message success" id="successMessage">
-        Votre message a été préparé avec succès. Cliquez sur le bouton WhatsApp pour l'envoyer.
-      </div>
-      
-      <div class="status-message error" id="errorMessage">
-        Veuillez remplir tous les champs obligatoires.
-      </div>
-      
-      <form id="contactForm">
-        <label for="entreprise">Nom de votre entreprise *</label>
-        <input type="text" id="entreprise" name="entreprise" required>
-
-        <label for="email">Adresse e-mail *</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="phone">Numéro de téléphone *</label>
-        <div class="phone-container">
-          <select id="country" name="country">
-            <option value="+225">🇨🇮 Côte d'Ivoire (+225)</option>
-            <option value="+33">🇫🇷 France (+33)</option>
-            <option value="+1">🇺🇸 USA (+1)</option>
-            <option value="+44">🇬🇧 UK (+44)</option>
-            <option value="+221">🇸🇳 Sénégal (+221)</option>
-          </select>
-          <input type="tel" id="phone" name="phone" placeholder="Votre numéro" required>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5>AGENCE</h5>
+                <ul class="footer-links">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">e-vision.agency@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="footer-logo">
+                    <img src="img/illustration/2-Photoroom.png" alt="E-vision logo">
+                </div>
+            </div>
         </div>
-
-        <label for="besoin">Décrivez votre besoin *</label>
-        <textarea id="besoin" name="besoin" rows="4" placeholder="Expliquez votre projet ou besoin..." required></textarea>
-
-        <button type="submit" class="btn">Générer le message WhatsApp</button>
-      </form>
-      
-      <a id="whatsappButton" class="btn whatsapp-btn" style="display: none;" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
-        </svg>
-        Envoyer via WhatsApp
-      </a>
-      
-      <div class="whatsapp-info">
-        <p>Après avoir rempli le formulaire, un message WhatsApp pré-rempli sera généré. Cliquez sur le bouton pour l'envoyer.</p>
-      </div>
-      
-      <div class="debug-info" id="debugInfo">
-        <!-- Les informations de débogage apparaîtront ici -->
-      </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 E-vision. Tous droits réservés.</p>
+        </div>
     </div>
-</div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -250,57 +270,23 @@
     }
   });
 
-  // Gestion de la soumission du formulaire
+  // Validation basique du formulaire avant envoi
   document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Masquer les messages précédents
-    document.getElementById('successMessage').style.display = 'none';
-    document.getElementById('errorMessage').style.display = 'none';
-    document.getElementById('debugInfo').style.display = 'none';
-    
-    // Validation des champs
     const entreprise = document.getElementById('entreprise').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const besoin = document.getElementById('besoin').value.trim();
     
     if (!entreprise || !email || !phone || !besoin) {
+      e.preventDefault();
       document.getElementById('errorMessage').style.display = 'block';
-      return;
+      document.getElementById('successMessage').style.display = 'none';
+      
+      // Scroll to error message
+      document.getElementById('errorMessage').scrollIntoView({ behavior: 'smooth' });
     }
-    
-    // Récupérer l'indicatif pays
-    const countryCode = document.getElementById('country').value;
-    const fullPhone = phone.startsWith('+') ? phone : countryCode + ' ' + phone;
-    
-    // Créer le message pour WhatsApp
-    const message = `Bonjour, je suis intéressé par vos services.%0A%0A` +
-                   `*Entreprise:* ${entreprise}%0A` +
-                   `*Email:* ${email}%0A` +
-                   `*Téléphone:* ${fullPhone}%0A` +
-                   `*Besoin:* ${besoin}`;
-    
-    // VOTRE NUMÉRO WHATSAPP - REMPLACEZ 225XXXXXXXXX PAR VOTRE NUMÉRO
-    // Format: numéro complet avec indicatif pays, sans espaces, sans signes +
-    const whatsappNumber = "2250714567367"; // Ex: 2250102030405
-    
-    // Vérification du format du numéro
-    const cleanWhatsappNumber = whatsappNumber.replace(/\D/g, '');
-    
-    // Mettre à jour le lien WhatsApp
-    const whatsappButton = document.getElementById('whatsappButton');
-    whatsappButton.href = `https://wa.me/${cleanWhatsappNumber}?text=${message}`;
-    whatsappButton.style.display = 'block';
-    
-    // Afficher le message de succès
-    document.getElementById('successMessage').style.display = 'block';
-    
-    
-    
-    // Défiler vers le bouton WhatsApp
-    whatsappButton.scrollIntoView({ behavior: 'smooth' });
   });
+  
 </script>
 
 </body>
