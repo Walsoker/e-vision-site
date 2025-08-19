@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/illustration/1-Photoroom.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.css">   
+  <link rel="shortcut icon" href="img/illustration/1-Photoroom.png" type="image/x-icon">  
+  <link rel="stylesheet" href="css/style.css"> 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <title>E-vision - Contact</title>
 
@@ -112,6 +112,7 @@
       z-index: -1;
     }
 
+    /* Messages de statut */
     .status-message {
       padding: 12px;
       border-radius: 6px;
@@ -132,13 +133,17 @@
       border: 1px solid #f5c6cb;
     }
 
-    .formspree-info {
+    .whatsapp-info {
       text-align: center;
       margin-top: 20px;
       padding: 10px;
       background-color: #f0f8ff;
       border-radius: 8px;
       font-size: 14px;
+    }
+
+    .footer-section {
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -173,29 +178,25 @@
         <div class="bg-shape"></div>
         <div class="bg-shape2"></div>
         
-        <h2>Contactez-nous</h2>
+        <h2>Contactez-nous via WhatsApp</h2>
         
-        <!-- Messages de statut (gérés par Formspree) -->
-        <div class="status-message success" id="successMessage" style="display: none;">
-          Merci ! Votre message a été envoyé avec succès.
+        <!-- Messages de statut -->
+        <div class="status-message success" id="successMessage">
+          Votre message a été préparé avec succès. Cliquez sur le bouton WhatsApp pour l'envoyer.
         </div>
         
-        <div class="status-message error" id="errorMessage" style="display: none;">
+        <div class="status-message error" id="errorMessage">
           Veuillez remplir tous les champs obligatoires.
         </div>
         
-        <!-- 
-          FORMSPREE INTÉGRATION 
-          Remplacez VOTRE_ID_FORMSPREE par l'ID de votre formulaire Formspree
-        -->
-        <form>
-          <label for="entreprise">Nom de votre entreprise</label>
+        <form id="contactForm">
+          <label for="entreprise">Nom de votre entreprise *</label>
           <input type="text" id="entreprise" name="entreprise" required>
     
-          <label for="email">Adresse e-mail</label>
+          <label for="email">Adresse e-mail *</label>
           <input type="email" id="email" name="email" required>
     
-          <label for="phone">Numéro de téléphone</label>
+          <label for="phone">Numéro de téléphone *</label>
           <div class="phone-container">
             <select id="country" name="country">
               <option value="+225">🇨🇮 Côte d'Ivoire (+225)</option>
@@ -207,14 +208,20 @@
             <input type="tel" id="phone" name="phone" placeholder="Votre numéro" required>
           </div>
     
-          <label for="besoin">Décrivez votre besoin</label>
+          <label for="besoin">Décrivez votre besoin *</label>
           <textarea id="besoin" name="besoin" rows="4" placeholder="Expliquez votre projet ou besoin..." required></textarea>
     
-          <button type="submit" class="btn">Envoyer le message</button>
+          <button type="submit" class="btn">Générer le message WhatsApp</button>
         </form>
         
-        <div class="formspree-info">
-          <p>Vos informations seront envoyées directement à notre équipe. Nous vous répondrons dans les plus brefs délais.</p>
+        <!-- Bouton WhatsApp qui apparaît après la soumission -->
+        <a id="whatsappButton" class="btn" style="display: none; background-color: #25D366;" 
+           target="_blank">
+          💬 Envoyer via WhatsApp
+        </a>
+        
+        <div class="whatsapp-info">
+          <p>Après avoir rempli le formulaire, un message WhatsApp pré-rempli sera généré. Cliquez sur le bouton pour l'envoyer.</p>
         </div>
       </div>
   </div>
@@ -259,35 +266,63 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  // Pré-remplit automatiquement l'indicatif choisi
-  const countrySelect = document.getElementById("country");
-  const phoneInput = document.getElementById("phone");
+  <script>
+    // Pré-remplit automatiquement l'indicatif choisi
+    const countrySelect = document.getElementById("country");
+    const phoneInput = document.getElementById("phone");
 
-  countrySelect.addEventListener("change", function() {
-    if (!phoneInput.value.startsWith('+')) {
-      phoneInput.value = this.value + " ";
-    }
-  });
+    countrySelect.addEventListener("change", function() {
+      // Ne pas écraser si l'utilisateur a déjà commencé à taper
+      if (!phoneInput.value.startsWith('+')) {
+        phoneInput.value = this.value + " ";
+      }
+    });
 
-  // Validation basique du formulaire avant envoi
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    const entreprise = document.getElementById('entreprise').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const besoin = document.getElementById('besoin').value.trim();
-    
-    if (!entreprise || !email || !phone || !besoin) {
+    // Gestion de la soumission du formulaire
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      document.getElementById('errorMessage').style.display = 'block';
-      document.getElementById('successMessage').style.display = 'none';
       
-      // Scroll to error message
-      document.getElementById('errorMessage').scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-  
-</script>
+      // Masquer les messages précédents
+      document.getElementById('successMessage').style.display = 'none';
+      document.getElementById('errorMessage').style.display = 'none';
+      
+      // Validation des champs
+      const entreprise = document.getElementById('entreprise').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const besoin = document.getElementById('besoin').value.trim();
+      
+      if (!entreprise || !email || !phone || !besoin) {
+        document.getElementById('errorMessage').style.display = 'block';
+        return;
+      }
+      
+      // Récupérer l'indicatif pays
+      const countryCode = document.getElementById('country').value;
+      const fullPhone = phone.startsWith('+') ? phone : countryCode + ' ' + phone;
+      
+      // Créer le message pour WhatsApp
+      const message = `Bonjour, je suis intéressé par vos services.%0A%0A` +
+                     `*Entreprise:* ${entreprise}%0A` +
+                     `*Email:* ${email}%0A` +
+                     `*Téléphone:* ${fullPhone}%0A` +
+                     `*Besoin:* ${besoin}`;
+      
+      // VOTRE NUMÉRO WHATSAPP - REMPLACEZ 225XXXXXXXXX PAR VOTRE NUMÉRO
+      const whatsappNumber = "2250714567367"; // Ex: 2250102030405
+      
+      // Mettre à jour le lien WhatsApp
+      const whatsappButton = document.getElementById('whatsappButton');
+      whatsappButton.href = `https://wa.me/${whatsappNumber}?text=${message}`;
+      whatsappButton.style.display = 'block';
+      
+      // Afficher le message de succès
+      document.getElementById('successMessage').style.display = 'block';
+      
+      // Défiler vers le bouton WhatsApp
+      whatsappButton.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
 
 </body>
 </html>
