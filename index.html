@@ -1,13 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-vision, agence digitale spécialisée en création de sites web, design graphique et campagnes Meta Ads. Transformez votre présence digitale avec nos solutions sur mesure.">
+    <meta name="keywords" content="agence digitale, création site web, design graphique, campagnes publicitaires, référencement naturel, identité visuelle, marketing digital, développement web">
+    <meta name="author" content="E-vision">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="E-vision - Agence Digitale Professionnelle">
+    <meta property="og:description" content="Solutions digitales complètes pour booster votre présence en ligne : sites web, design graphique et publicités Meta.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.e-vision.agency">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="shortcut icon" href="img/illustration/1-Photoroom.png" type="image/x-icon">   
-    <title>E-vision - Acceuil</title>
+    <link rel="shortcut icon" href="img/illustration/1-Photoroom.png" type="image/x-icon"> 
+    <link rel="canonical" href="https://www.e-vision.agency">
+    <title>E-vision - Agence Digitale | Création de Sites Web & Design Graphique</title>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "E-vision",
+      "description": "Agence digitale spécialisée en création de sites web, design graphique et campagnes publicitaires Meta",
+      "serviceType": "Développement web, Design graphique, Publicité digitale",
+      "areaServed": "Côte d'Ivoire, France, Sénégal",
+      "url": "https://www.e-vision.agency",
+      "telephone": "+2250714567367",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CI"
+      }
+    }
+    </script>
 </head>
 <body>
     <div class="container-fluid">
@@ -18,15 +45,16 @@
                     <span></span>
                     <span></span>
                 </button>
-                <a href="index.html" class="logo"><img src="img/illustration/2-Photoroom.png" alt="logo"></a>
+                <a href="index.html" class="logo"><img src="img/illustration/2-Photoroom.png" alt="Logo E-vision - Agence digitale"></a>
 
                 <!-- Liens navigation + boutons dans le collapse -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav-links navbar-nav ms-5 mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">A propos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#realisations">Réalisations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#avis">Avis</a></li>
                     </ul>
                 </div>
                 <div class="nav-buttons d-flex gap-5">
@@ -37,7 +65,8 @@
             </nav>
         </header>
     </div>
-    <div class="background"> <!--ajoute le background de la section hero-->
+    
+    <div class="background" id="accueil">
     <div class="container-fluid">
         <div class="title">
             <div class="title1">
@@ -50,139 +79,126 @@
                 <a href="contact.html" class="cta"> Obtenir votre devis gratuit en 24h </a>
             </div>
         </div>
-      <!--ajoute l'image de la section hero-->
-        </div>
+      </div>
 
 
-       <div class="container-fluid">
-        <div class="services">
-            <div class="title2">
-                <h2>Nos Services</h2>
-            </div>
-            <div class="all-services">
-                <div class="icone">
-                    <div class="subir">
-                        <div class="icon">
-                            <i class="fa-solid fa-code"></i>
-                        
-                        <div class="sous-texte">
-                            <h3>Conception de site web</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur</p>
+        <div class="container-fluid" id="services">
+            <div class="services">
+                <div class="title2">
+                    <h2>Nos Services</h2>
+                </div>
+                <div class="all-services">
+                    <div class="icone">
+                        <div class="subir">
+                            <div class="icon">
+                                <i class="fa-solid fa-code"></i>
+                                <div class="sous-texte">
+                                    <h3>Conception de site web</h3>
+                                    <p>Création de sites web modernes, responsives et optimisés pour tous les appareils, avec une expérience utilisateur exceptionnelle.</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="subir">
+                            <div class="icon">
+                                <i class="fa-solid fa-pen-nib"></i>
+                                <div class="sous-texte">
+                                    <h3>Design graphique</h3>
+                                    <p>Conception d'identités visuelle percutantes, logos, supports print et digitaux qui renforcent l'image de votre marque.</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="subir">
+                            <div class="icon">
+                                <i class="fa-solid fa-bullhorn"></i>
+                                <div class="sous-texte">
+                                    <h3>Campagnes Meta Ads</h3>
+                                    <p>Stratégies publicitaires ciblées sur Facebook et Instagram pour maximiser votre visibilité et générer des leads qualifiés.</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="subir">
+                            <div class="icon">
+                                <i class="fa-solid fa-robot"></i>
+                                <div class="sous-texte">
+                                    <h3>Automatisation marketing</h3>
+                                    <p>Mise en place de systèmes automatisés pour engager vos clients, nourrir vos prospects et optimiser vos processus.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-    
-                    </div>
-
-                    <div class="subir">
-                        <div class="icon">
-                            <i class="fa-solid fa-pen-nib"></i>
-                        
-                        <div class="sous-texte">
-                            <h3>Lorem ipsum dolor</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur</p>
-                        </div>
-                    </div>
-    
-                    </div>
-
-                    <div class="subir">
-                        <div class="icon">
-                            <i class="fa-solid fa-code"></i>
-                        
-                        <div class="sous-texte">
-                            <h3>Lorem ipsum dolor</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur</p>
-                        </div>
-                    </div>
-    
-                    </div>
-
-                    <div class="subir">
-                        <div class="icon">
-                            <i class="fa-solid fa-robot"></i>
-                        
-                        <div class="sous-texte">
-                            <h3>Lorem ipsum dolor</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur</p>
-                        </div>
-                    </div>
-    
-                    </div>
-                   
                 </div>
             </div>
         </div>
-       </div>
+
     </div>
-<!--section a propos-->
-    <div class="container-fluid apropos-section">
+
+    <div class="container-fluid apropos-section" id="apropos">
         <div class="title2 text-center">
             <h2>À propos</h2>
         </div>
 
         <div class="row g-0 apropos-main-row">
-            <!-- Left image -->
             <div class="col-lg-6 col-md-12 apropos-main-image">
                 <img src="img/illustration/woman-sitting-with-notebook-laptop.jpg" 
-                    alt="Deux hommes discutant dans un bureau moderne">
+                    alt="Équipe E-vision collaborant sur un projet digital">
             </div>
-            <!-- Right purple text -->
             <div class="col-lg-6 col-md-12 apropos-text d-flex align-items-center">
                 <div class="p-4">
-                    <p class="travail">TRAVAIL D'EQUIPE</p>
+                    <p class="travail">EXPERTISE DIGITALE</p>
                     <h3 class="title3">Chaque marque mérite une présence digitale forte</h3>
                     <p class="phrase2">
-                        Scelerisque auctor dolor diam tortor, fames faucibus non interdum nunc. 
-                        Ultrices nibh sapien elit gravida ac, rutrum molestie adipiscing lacinia. 
-                        Scelerisque auctor dolor diam tortor, fames faucibus non interdum nunc.
+                        Chez E-vision, nous combinons expertise technique et créativité pour offrir des solutions digitales 
+                        qui transforment votre vision en réalité. Notre équipe passionnée travaille sans relâche pour 
+                        développer des stratégies sur mesure qui amplifient votre présence en ligne et génèrent des résultats concrets.
                     </p>
                     <a href="contact.html" class="cta-apropos">Obtenez votre devis gratuit en 24h</a>
                 </div>
             </div>
         </div>
 
-        <!-- Bottom gallery -->
         <div class="row g-0 apropos-gallery">
             <div class="col-12 col-md-4">
                 <img src="img/illustration/teamworking-startups-employees-leveraging-machine-learning-technology-office_482257-119368(1).jpg" 
-                    alt="Collaboration et brainstorming en équipe">
+                    alt="Processus de création et développement chez E-vision">
             </div>
             <div class="col-12 col-md-4">
                 <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3" 
-                    alt="Professionnels travaillant ensemble au bureau">
+                    alt="Réunion d'équipe et brainstorming créatif">
             </div>
             <div class="col-12 col-md-4">
                 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3" 
-                    alt="Femme souriante dans un environnement de bureau moderne">
+                    alt="Expertise digitale et solutions innovantes">
             </div>
         </div>
     </div>
-    <!--NOS RÉALISATIONS SECTION-->
-    <div class="container-fluid realisations-section">
+
+    <div class="container-fluid realisations-section" id="realisations">
         <div class="title2 text-center">
             <h2>Nos réalisations</h2>
         </div>
         <div class="realisations-subtitle text-center">
-            <p>Aliquet sed nulla tincidunt pulvinar sed fames sit facilisis dictumst. Ornare faucibus quis velit fringilla aliquam ultrices. Malesuada ut aliquam at ac est nisl, interdum etiam dignissim. Sed ut vestibulum eget purus ornare. Risus elit et fringilla habitant ut facilisi.</p>
+            <p>Découvrez une sélection de nos projets récents qui illustrent notre expertise en conception web, design graphique et stratégie digitale.</p>
         </div>
         
         <div class="carousel-container">
             <div class="carousel-track">
-                <!-- Slide 1 -->
                 <div class="carousel-slide active">
                     <div class="realisations-content">
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-lg-6 col-md-12 project-image">
                                     <div class="project-card">
-                                        <a href="https://walsoker.github.io/Adjam-final/"><img src="img/illustration/Capture d'écran 2025-08-20 010545.png" alt="exemple de nos realisation"></a>
+                                        <a href="https://walsoker.github.io/Adjam-final/" id="project-link-1"><img src="img/illustration/Capture d'écran 2025-08-20 010545.png" alt="Projet de design graphique réalisé par E-vision"></a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12 project-details">
                                     <div class="project-info">
                                         <span class="project-category">DESIGN GRAPHIQUE</span>
-                                        <h4>Enim sagittis, sit porttitor morbi lobortis amet, libero adipiscing auctor. Malesuada tristique libero, id netus tincidunt. Egestas ac arcu amet nisl quis est ...</h4>
-                                        <a href="https://walsoker.github.io/Adjam-final/" class="project-link" target="_blank">Obtenir un devis  dd<i class="fas fa-arrow-right"></i></a>
+                                        <h4>Identité visuelle complète pour une entreprise innovante avec charte graphique, logo et supports marketing cohérents.</h4>
+                                        <a href="https://walsoker.github.io/Adjam-final/" class="project-link" target="_blank">Obtenir un devis <i class="fas fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -190,21 +206,27 @@
                     </div>     
                 </div>
                 
-                <!-- Slide 2 -->
                 <div class="carousel-slide">
                     <div class="realisations-content">
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-lg-6 col-md-12 project-image">
                                     <div class="project-card">
-                                        <a href="https://projet-finale-nine.vercel.app/"><img src="img/illustration/image.png" alt="exemple de nos realisation"></a>
+                                        <video id="project-video" muted loop playsinline>
+                                            <source src="img/illustration/Recording 2025-08-19 182726.mp4" type="video/mp4">
+                                            Votre navigateur ne supporte pas la lecture de vidéos.
+                                        </video>
+                                        <div class="video-controls">
+                                            <button class="video-btn" id="play-pause"><i class="fas fa-play"></i></button>
+                                            <button class="video-btn" id="mute-unmute"><i class="fas fa-volume-mute"></i></button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12 project-details">
                                     <div class="project-info">
                                         <span class="project-category">BRANDING</span>
-                                        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam ...</h4>
-                                        <a href="https://projet-finale-nine.vercel.app/" class="project-link">visiter ce projet <i class="fas fa-arrow-right"></i></a>
+                                        <h4>Stratégie de marque complète avec repositionnement, identité visuelle renouvelée et guidelines détaillées.</h4>
+                                        <a href="https://projet-finale-nine.vercel.app/" class="project-link" target="_blank">visiter ce projet <i class="fas fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -212,43 +234,20 @@
                     </div>
                 </div>
                 
-                <!-- Slide 3 -->
                 <div class="carousel-slide">
                     <div class="realisations-content">
                         <div class="container">
                             <div class="row align-items-center">
                                 <div class="col-lg-6 col-md-12 project-image">
                                     <div class="project-card">
-                                        <img src="https://images.unsplash.com/photo-1561070791-36c11767b26a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Site web responsive">
+                                        <img src="img/illustration/image.png" alt="Site e-commerce responsive développé par E-vision">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12 project-details">
                                     <div class="project-info">
-                                        <span class="project-category">DEVELOPPEMENT WEB</span>
-                                        <h4>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit ...</h4>
-                                        <a href="#" class="project-link">Obtenir un devis <i class="fas fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 4 -->
-                <div class="carousel-slide">
-                    <div class="realisations-content">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-lg-6 col-md-12 project-image">
-                                    <div class="project-card">
-                                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Stratégie digitale">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-12 project-details">
-                                    <div class="project-info">
-                                        <span class="project-category">STRATÉGIE DIGITALE</span>
-                                        <h4>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident ...</h4>
-                                        <a href="#" class="project-link">Obtenir un devis <i class="fas fa-arrow-right"></i></a>
+                                        <span class="project-category">DÉVELOPPEMENT WEB</span>
+                                        <h4>Plateforme e-commerce complète avec gestion de stock, paiements sécurisés et interface administrateur intuitive.</h4>
+                                        <a href=" https://projet-finale-nine.vercel.app/ " class="project-link">Obtenir un devis <i class="fas fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -271,29 +270,27 @@
             <span class="dot active" data-index="0"></span>
             <span class="dot" data-index="1"></span>
             <span class="dot" data-index="2"></span>
-            <span class="dot" data-index="3"></span>
         </div>
     </div>
 
-    <!--AVIS CLIENTS SECTION-->
-    <div class="container-fluid avis-clients-section">
+    <div class="container-fluid avis-clients-section" id="avis">
         <div class="title2 text-center">
             <h2>Avis clients</h2>
         </div>
         <div class="avis-subtitle text-center">
-            <p>Sed ut vestibulum eget purus ornare. Risus elit et fringilla habitant ut facilisi.</p>
+            <p>Ils nous ont fait confiance pour transformer leur vision digitale. Découvrez les témoignages de nos clients satisfaits.</p>
         </div>
         
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="testimonial-card">
-                        <p class="testimonial-text">Lorem vestibulum ultrices mi risus, duis non, ullamcor molestae. Magna congue eu mauris and pellentesque et. Mollis augue aliquam sit maecenas at platea ultricies elit eget blandit neque convallis.</p>
+                        <p class="testimonial-text">"E-vision a transformé notre présence en ligne avec un site web exceptionnel et une stratégie digitale complète. Leur professionnalisme et leur réactivité ont dépassé nos attentes."</p>
                         <div class="client-info">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Client photo" class="client-photo">
+                            <img src="img/illustration/LOGO COLIGAZ.png" alt="Logo Coligaz - Client satisfait" class="client-photo">
                             <div class="client-details">
-                                <h5>John Martin</h5>
-                                <span>Client.com</span>
+                                <h5>Coligaz</h5>
+                                <span>Entreprise énergétique</span>
                             </div>
                         </div>
                     </div>
@@ -301,12 +298,12 @@
                 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="testimonial-card">
-                        <p class="testimonial-text">Sapien, vestibulum sit amet et ex ferment sapien consectetur. Fulle sagittis egestas amet bibendum elit suscipit. Pellentesque congue fermentum interdum. Odio magna eget turpis risus dignissim.</p>
+                        <p class="testimonial-text">"Le travail d'E-vision sur notre identité visuelle a complètement redéfini notre image de marque. Leur créativité et leur expertise technique font toute la différence."</p>
                         <div class="client-info">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=100&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Client photo" class="client-photo">
+                            <img src="img/illustration/homme-concevant-des-sites-web-vue-laterale (1).jpg" alt="Jonathan Emmanuel - Artiste IA" class="client-photo">
                             <div class="client-details">
-                                <h5>Jonathan Emmanuel (AI Artist)</h5>
-                                <span>Audi Agousse</span>
+                                <h5>Jonathan Emmanuel</h5>
+                                <span>Artiste IA</span>
                             </div>
                         </div>
                     </div>
@@ -314,12 +311,12 @@
                 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="testimonial-card">
-                        <p class="testimonial-text">Odio rhoncus ornare ut ipsum. Malesuada vel dui urna commodo vel sit. In auctor feugiat tristique a mi mattis ante risus quam fermentum risus. Placerat lobortis elementum risus libero ut lorem.</p>
+                        <p class="testimonial-text">"Les campagnes Meta Ads développées par E-vision ont considérablement augmenté notre visibilité et notre taux de conversion. Un investissement très rentable !"</p>
                         <div class="client-info">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Client photo" class="client-photo">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Benjamin Assan - Consultant en communication" class="client-photo">
                             <div class="client-details">
-                                <h5>Benjamin Assan (Consultant en com)</h5>
-                                <span>Facebook</span>
+                                <h5>Benjamin Assan</h5>
+                                <span>Consultant en communication</span>
                             </div>
                         </div>
                     </div>
@@ -328,34 +325,33 @@
         </div>
     </div>
 
-    <!--VOS PROJETS SECTION--> 
-    <div id="#projet">
+    <div id="projet">
         <div class="container-fluid projets-section">
             <div class="row g-0">
                 <div class="col-lg-6 col-md-12 projets-content">
                     <div class="projets-text">
                         <span class="projets-label">SANS LIMITES</span>
                         <h2>Vos projets, notre imagination sans frontières</h2>
-                        <p>Scelerisque auctor dolor diam tortor, fames faucibus non interdum nunc. Ultrices nibh sapien elit gravida ac rutrum molestie adipiscing lacinia.</p>
-                        <a href="#" class="btn-projets">Commencer maintenant</a>
+                        <p>Que vous soyez une startup innovante ou une entreprise établie, notre équipe passionnée travaille sans relâche pour concrétiser vos ambitions digitales. Nous transformons vos idées en expériences engageantes.</p>
+                        <a href="contact.html" class="btn-projets">Commencer maintenant</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 projets-gallery">
                     <div class="gallery-grid">
                         <div class="gallery-item large">
-                            <img src="img/illustration/happy-man-holding-light-bulb-symbol.jpg" alt="Créativité digitale">
+                            <img src="img/illustration/happy-man-holding-light-bulb-symbol.jpg" alt="Processus créatif et innovation chez E-vision">
                         </div>
                         <div class="gallery-item">
-                            <img src="img/illustration/light-bulb-3104355__340.jpg" alt="Design graphique">
+                            <img src="img/illustration/light-bulb-3104355__340.jpg" alt="Solutions digitales innovantes et efficaces">
                         </div>
                         <div class="gallery-item">
-                            <img src="img/illustration/head-on-chalkboard-avec-ampoule-notes-à-lintérieur.jpg" alt="Homme d'affaires créatif">
+                            <img src="img/illustration/head-on-chalkboard-avec-ampoule-notes-à-lintérieur.jpg" alt="Stratégie digitale et conception sur mesure">
                         </div>
                         <div class="gallery-item">
-                            <img src="img/illustration/content-creator-with-product.jpg" alt="Brainstorming">
+                            <img src="img/illustration/content-creator-with-product.jpg" alt="Création de contenu et marketing digital">
                         </div>
                         <div class="gallery-item">
-                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Innovation">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=200&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Expertise technique et développement web">
                         </div>
                     </div>
                 </div>
@@ -363,53 +359,48 @@
         </div>
     </div>
 
-    
-
-    <!--FAITES-VOUS UNE IDÉE SECTION-->
-    <div class="idee-section">
+    <div class="idee-section" id="contact">
         <div class="idee-content">
-          <span class="idee-label">DONNEZ VIE À VOS IDÉES DÈS MAINTENANT</span>
+          <span class="idee-label">TRANSFORMEZ VOS IDÉES EN RÉALITÉ</span>
           <h2>Faites-vous une idée</h2>
-          <p>Demandez dès maintenant votre devis personnalisé et gratuit pour la création de site web, la conception graphique ou vos campagnes Meta Ads.</p>
-          <a href="#" class="btn-idee">Devis gratuit</a>
+          <p>Obtenez votre devis gratuit et personnalisé pour la création de site web, le design graphique ou vos campagnes publicitaires sur mesure. Lancez-vous dès aujourd'hui !</p>
+          <a href="contact.html" class="btn-idee">Devis gratuit</a>
         </div>
         <div class="idee-visual">
-          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Smartphone avec application">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Application mobile et solutions digitales E-vision">
         </div>
       </div>
-      
 
-    <!--FOOTER-->
     <footer class="footer-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4">
                     <h5>MENU</h5>
                     <ul class="footer-links">
-                        <li><a href="#">Accueil</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">À propos</a></li>
-                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#realisations">Portfolio</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
                     <h5>INFORMATIONS</h5>
                     <ul class="footer-links">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Témoignages</a></li>
-                        <li><a href="#">Documentations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#avis">Témoignages</a></li>
+                        <li><a href="#">Mentions légales</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
                     <h5>AGENCE</h5>
                     <ul class="footer-links">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">e-vision.agency@gmail.com</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="mailto:e-vision.agency@gmail.com">e-vision.agency@gmail.com</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="footer-logo">
-                        <img src="img/illustration/2-Photoroom.png" alt="E-vision logo">
+                        <img src="img/illustration/2-Photoroom.png" alt="Logo E-vision - Agence digitale">
                     </div>
                 </div>
             </div>
@@ -419,15 +410,167 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
+        // Animation au défilement
         document.addEventListener('DOMContentLoaded', function() {
+            // Configuration des animations
+            const animatedElements = document.querySelectorAll('.subir, .testimonial-card, .project-card, .gallery-item, .projets-text, .idee-content');
+            
+            // Options pour l'observateur d'intersection
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            // Fonction pour l'observateur
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observer chaque élément
+            animatedElements.forEach(function(element) {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+            
+            // Gestion du carrousel
+            const track = document.querySelector('.carousel-track');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevButton = document.querySelector('.carousel-control.prev');
+            const nextButton = document.querySelector('.carousel-control.next');
+            let currentIndex = 0;
+            
+            // Éléments pour la vidéo
+            const video = document.getElementById('project-video');
+            const playPauseBtn = document.getElementById('play-pause');
+            const muteUnmuteBtn = document.getElementById('mute-unmute');
+            
+            // Fonction pour mettre à jour le carrousel
+            function updateCarousel() {
+                // Mettre à jour les slides
+                slides.forEach((slide, index) => {
+                    if (index === currentIndex) {
+                        slide.classList.add('active');
+                        
+                        // Si on change de slide, mettre la vidéo en pause
+                        if (index !== 1 && video) {
+                            video.pause();
+                            if (playPauseBtn) {
+                                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                            }
+                        }
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+                
+                // Mettre à jour les points de navigation
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Événement pour le bouton précédent
+            prevButton.addEventListener('click', function() {
+                currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+                updateCarousel();
+            });
+            
+            // Événement pour le bouton suivant
+            nextButton.addEventListener('click', function() {
+                currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+                updateCarousel();
+            });
+            
+            // Événement pour les points de navigation
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    currentIndex = parseInt(this.getAttribute('data-index'));
+                    updateCarousel();
+                });
+            });
+            
+            // Contrôles de la vidéo
+            if (playPauseBtn && video) {
+                playPauseBtn.addEventListener('click', function() {
+                    if (video.paused) {
+                        video.play();
+                        this.innerHTML = '<i class="fas fa-pause"></i>';
+                    } else {
+                        video.pause();
+                        this.innerHTML = '<i class="fas fa-play"></i>';
+                    }
+                });
+            }
+            
+            if (muteUnmuteBtn && video) {
+                muteUnmuteBtn.addEventListener('click', function() {
+                    video.muted = !video.muted;
+                    this.innerHTML = video.muted ? 
+                        '<i class="fas fa-volume-mute"></i>' : 
+                        '<i class="fas fa-volume-up"></i>';
+                });
+            }
+            
+            // Défilement automatique (optionnel)
+            let autoPlay = setInterval(function() {
+                currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+                updateCarousel();
+            }, 5000);
+            
+            // Arrêter le défilement automatique quand la souris est sur le carrousel
+            const carousel = document.querySelector('.carousel-container');
+            carousel.addEventListener('mouseenter', function() {
+                clearInterval(autoPlay);
+            });
+            
+            carousel.addEventListener('mouseleave', function() {
+                autoPlay = setInterval(function() {
+                    currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+                    updateCarousel();
+                }, 5000);
+            });
+            
+            // Navigation fluide
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Menu mobile
             const toggler = document.querySelector('.navbar-toggler');
             const navbarCollapse = document.getElementById('navbarSupportedContent');
             
-            toggler.addEventListener('click', function() {
-                this.classList.toggle('active');
-                navbarCollapse.classList.toggle('show');
-            });
+            if (toggler) {
+                toggler.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    navbarCollapse.classList.toggle('show');
+                });
+            }
             
             // Fermer le menu lorsqu'on clique sur un lien
             const navLinks = document.querySelectorAll('.nav-link');
@@ -438,80 +581,33 @@
                 });
             });
         });
-    </script>
 
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const track = document.querySelector('.carousel-track');
-        const slides = document.querySelectorAll('.carousel-slide');
-        const dots = document.querySelectorAll('.dot');
-        const prevButton = document.querySelector('.carousel-control.prev');
-        const nextButton = document.querySelector('.carousel-control.next');
-        let currentIndex = 0;
-        
-        // Fonction pour mettre à jour le carrousel
-        function updateCarousel() {
-            // Mettre à jour les slides
-            slides.forEach((slide, index) => {
-                if (index === currentIndex) {
-                    slide.classList.add('active');
-                } else {
-                    slide.classList.remove('active');
-                }
-            });
+        // Classes d'animation
+        const style = document.createElement('style');
+        style.textContent = `
+            .animate-in {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
             
-            // Mettre à jour les points de navigation
-            dots.forEach((dot, index) => {
-                if (index === currentIndex) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
+            .subir, .testimonial-card, .project-card, .gallery-item, .projets-text, .idee-content {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
                 }
-            });
-        }
-        
-        // Événement pour le bouton précédent
-        prevButton.addEventListener('click', function() {
-            currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
-            updateCarousel();
-        });
-        
-        // Événement pour le bouton suivant
-        nextButton.addEventListener('click', function() {
-            currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
-            updateCarousel();
-        });
-        
-        // Événement pour les points de navigation
-        dots.forEach(dot => {
-            dot.addEventListener('click', function() {
-                currentIndex = parseInt(this.getAttribute('data-index'));
-                updateCarousel();
-            });
-        });
-        
-        // Défilement automatique (optionnel)
-        let autoPlay = setInterval(function() {
-            currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
-            updateCarousel();
-        }, 5000);
-        
-        // Arrêter le défilement automatique quand la souris est sur le carrousel
-        const carousel = document.querySelector('.carousel-container');
-        carousel.addEventListener('mouseenter', function() {
-            clearInterval(autoPlay);
-        });
-        
-        carousel.addEventListener('mouseleave', function() {
-            autoPlay = setInterval(function() {
-                currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
-                updateCarousel();
-            }, 5000);
-        });
-    });
-</script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
