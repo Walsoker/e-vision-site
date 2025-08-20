@@ -58,6 +58,129 @@ nav{
     font-weight: 500;
 }
 
+/* Media Queries pour la responsivité */
+
+/* Tablette */
+@media (max-width: 992px) {
+    nav {
+        padding: 1rem;
+    }
+    
+    .logo img {
+        width: 160px;
+    }
+    
+    .nav-links {
+        gap: 1.5rem;
+    }
+    
+    .btn-connect {
+        margin-right: 15px;
+        padding: 6px 18px 4px 18px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        border: none;
+        padding: 0.25rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        cursor: pointer;
+    }
+    
+    .navbar-toggler span {
+        height: 3px;
+        width: 100%;
+        background-color: #333;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+    
+    nav {
+        padding: 0.8rem;
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        order: 2;
+        text-align: center;
+        flex: 1;
+    }
+    
+    .logo img {
+        width: 140px;
+    }
+    
+    .navbar-toggler {
+        order: 1;
+    }
+    
+    .nav-buttons {
+        order: 3;
+    }
+    
+    #navbarSupportedContent {
+        order: 4;
+        width: 100%;
+        display: none;
+        margin-top: 1rem;
+    }
+    
+    #navbarSupportedContent.show {
+        display: block;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+    
+    .nav-links li {
+        text-align: center;
+    }
+    
+    .btn-connect {
+        margin-right: 0;
+        padding: 7px 18px 5px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Petit mobile */
+@media (max-width: 480px) {
+    .logo img {
+        width: 120px;
+    }
+    
+    .btn-connect {
+        padding: 6px 16px 4px 16px;
+        font-size: 0.85rem;
+    }
+    
+    nav {
+        padding: 0.6rem;
+    }
+}
+
+/* Animation pour l'icône du toggler */
+.navbar-toggler.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
 /*ici que tu dois mettre le background */
 
 
@@ -332,7 +455,8 @@ nav{
     }
 }
  /* NOS RÉALISATIONS SECTION STYLES */
- .realisations-section {
+   /* Styles existants - NE PAS MODIFIER */
+   .realisations-section {
     background: #f8f9fa;
     padding: 5rem 0;
 }
@@ -373,6 +497,7 @@ nav{
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -381,27 +506,19 @@ nav{
 
 .project-card img {
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(255,87,34,0.9), rgba(255,152,0,0.9));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 900;
-    font-size: 2rem;
-    text-align: center;
-    line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+.project-image {
+    padding: 17px;
+    height: 350px; /* Hauteur fixe pour le conteneur */
+}
+
+.project-image a {
+    display: block;
+    height: 100%;
 }
 
 .project-details {
@@ -490,6 +607,181 @@ nav{
 
 .dot.active:hover {
     background: linear-gradient(45deg, #6366f1, #8b5cf6);
+}
+
+/* Styles pour le carrousel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    width: 100%;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.carousel-control {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 20px;
+    pointer-events: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.carousel-control:hover {
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.carousel-control i {
+    font-size: 1.2rem;
+    color: #6366f1;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .project-image {
+        height: 350px;
+    }
+    
+    .project-info {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-image {
+        height: 300px;
+    }
+    
+    .realisations-section {
+        padding: 3rem 0;
+    }
+    
+    .realisations-section .title2 h2 {
+        font-size: 2rem;
+    }
+    
+    .project-info {
+        padding: 1.5rem;
+    }
+    
+    .project-info h4 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-image {
+        height: 250px;
+    }
+    
+    .project-details {
+        padding: 1rem;
+    }
+    
+    .project-info {
+        padding: 1.2rem;
+    }
+    
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        margin: 0 10px;
+    }
+}
+
+/* Nouveaux styles pour le carrousel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    width: 100%;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.carousel-control {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 20px;
+    pointer-events: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.carousel-control:hover {
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.carousel-control i {
+    font-size: 1.2rem;
+    color: #6366f1;
 }
 
 /* Responsive Design for Réalisations */
@@ -707,74 +999,67 @@ nav{
 
 /* FAITES-VOUS UNE IDÉE SECTION */
 .idee-section {
-    background: linear-gradient(135deg, #6b46c1 0%, #9333ea 100%);
-    padding: 5rem 0;
+    background: #4c1d95; /* Violet profond */
+    padding: 4rem 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    min-height: 500px;
+    justify-content: center;
+    gap: 2rem;
+    border-radius: 12px;
+    color: white;
 }
 
 .idee-content {
-    flex: 1;
-    padding: 0 3rem;
-    color: white;
+    max-width: 600px;
 }
 
 .idee-label {
-    display: inline-block;
-    background: rgba(255,255,255,0.2);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    display: block;
     font-size: 0.75rem;
     font-weight: 600;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
 }
 
 .idee-content h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+    margin-bottom: 1rem;
 }
 
 .idee-content p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 2rem;
     opacity: 0.9;
 }
 
 .btn-idee {
-    background: white;
-    color: #6b46c1;
-    padding: 1rem 2rem;
-    border-radius: 30px;
+    background: linear-gradient(90deg, #9333ea, #6b21a8);
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 999px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
     display: inline-block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .btn-idee:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    color: #6b46c1;
-}
-
-.idee-visual {
-    flex: 0 0 300px;
-    padding-right: 3rem;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
 .idee-visual img {
-    width: 100%;
-    height: auto;
-    max-width: 300px;
+    width: 280px;
+    border-radius: 20px;
+    transform: rotate(5deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
+
 
 /* FOOTER SECTION */
 .footer-section {
