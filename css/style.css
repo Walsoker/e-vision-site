@@ -1,3 +1,142 @@
+/* MOBILE OVERFLOW FIX - Add this to your existing CSS */
+
+/* Prevent horizontal overflow globally */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
+/* Fix container fluid width issues */
+.container-fluid {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Fix title section overflow */
+.title {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Fix projets-text margin issue on mobile */
+@media (max-width: 768px) {
+    .projets-text {
+        margin-left: 0;
+        padding: 0 15px;
+    }
+    
+    .projets-content {
+        padding: 2rem 15px;
+    }
+    
+    /* Fix title section padding */
+    .title {
+        padding: 0 15px;
+    }
+    
+    .title1 h1 {
+        padding: 0 15px;
+    }
+    
+    .phrase {
+        padding: 0 15px;
+    }
+    
+    /* Fix services section */
+    .services {
+        padding: 40px 15px;
+    }
+    
+    /* Fix à propos text padding */
+    .apropos-text .p-4 {
+        padding: 2rem 15px !important;
+    }
+    
+    /* Fix realisations section */
+    .realisations-section {
+        padding: 3rem 15px;
+    }
+    
+    .project-details {
+        padding: 1rem 15px;
+    }
+    
+    /* Fix idée section */
+    .idee-section {
+        padding: 3rem 15px;
+        margin: 0 15px;
+    }
+    
+    .idee-content {
+        padding: 0 15px;
+    }
+    
+    /* Fix gallery grid for mobile */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 200px);
+        height: auto;
+    }
+    
+    .gallery-item.large {
+        grid-row: span 1;
+    }
+    
+    /* Fix carousel container */
+    .carousel-container {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    .carousel-slide {
+        width: 100%;
+        max-width: 100vw;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Additional fixes for small mobile */
+    .container-fluid {
+        padding: 0 10px;
+    }
+    
+    .title, .title1 h1, .phrase {
+        padding: 0 10px;
+    }
+    
+    .services {
+        padding: 40px 10px;
+    }
+    
+    .apropos-text .p-4 {
+        padding: 1.5rem 10px !important;
+    }
+    
+    .realisations-section {
+        padding: 3rem 10px;
+    }
+    
+    .project-details {
+        padding: 1rem 10px;
+    }
+    
+    .idee-section {
+        padding: 3rem 10px;
+        margin: 0 10px;
+    }
+    
+    .projets-content {
+        padding: 2rem 10px;
+    }
+    
+    .projets-text {
+        padding: 0 10px;
+    }
+}
 *{
     margin: 0;
     padding: 0;
@@ -83,23 +222,55 @@ nav{
 /* Mobile */
 @media (max-width: 768px) {
     .navbar-toggler {
-        border: none;
-        padding: 0.25rem 0.5rem;
+        border: none !important;
+        padding: 8px !important;
+        background: transparent !important;
+        cursor: pointer !important;
+        width: 40px !important;
+        height: 40px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+        position: relative !important;
+        flex-direction: row !important;
+    }
+    
+    .navbar-toggler:hover {
+        background: rgba(131, 58, 251, 0.1) !important;
+    }
+    
+    .hamburger-lines {
+        width: 24px;
+        height: 18px;
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 30px;
-        height: 21px;
-        background: transparent;
-        cursor: pointer;
     }
     
-    .navbar-toggler span {
-        height: 3px;
-        width: 100%;
-        background-color: #333;
-        border-radius: 3px;
-        transition: all 0.3s ease;
+    .hamburger-lines span {
+        display: block !important;
+        height: 2px !important;
+        width: 100% !important;
+        background: #333 !important;
+        border-radius: 2px !important;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+        transform-origin: center !important;
+    }
+    
+    .hamburger-lines span:nth-child(1) {
+        width: 100% !important;
+    }
+    
+    .hamburger-lines span:nth-child(2) {
+        width: 80% !important;
+        margin-left: auto !important;
+    }
+    
+    .hamburger-lines span:nth-child(3) {
+        width: 100% !important;
     }
     
     nav {

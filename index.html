@@ -41,9 +41,11 @@
         <header>
             <nav class="navbar navbar-expand-lg">
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <div class="hamburger-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </button>
                 <a href="index.html" class="logo"><img src="img/illustration/2-Photoroom.png" alt="Logo E-vision - Agence digitale"></a>
 
@@ -196,9 +198,9 @@
                                 </div>
                                 <div class="col-lg-6 col-md-12 project-details">
                                     <div class="project-info">
-                                        <span class="project-category">DESIGN GRAPHIQUE</span>
-                                        <h4>Identité visuelle complète pour une entreprise innovante avec charte graphique, logo et supports marketing cohérents.</h4>
-                                        <a href="https://walsoker.github.io/Adjam-final/" class="project-link" target="_blank">Obtenir un devis <i class="fas fa-arrow-right"></i></a>
+                                        <span class="project-category">SITE VITRINE POUR LA COMMUNE DE ADJAME</span>
+                                        <h4>Site vitrine moderne pour la commune d’Adjamé, valorisant culture, économie et vie locale.</h4>
+                                        <a href="https://walsoker.github.io/Adjam-final/" class="project-link">visiter ce projet<i class="fas fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -212,21 +214,17 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-6 col-md-12 project-image">
                                     <div class="project-card">
-                                        <video id="project-video" muted loop playsinline>
+                                        <video id="project-video" muted loop playsinline autoplay>
                                             <source src="img/illustration/Recording 2025-08-19 182726.mp4" type="video/mp4">
                                             Votre navigateur ne supporte pas la lecture de vidéos.
                                         </video>
-                                        <div class="video-controls">
-                                            <button class="video-btn" id="play-pause"><i class="fas fa-play"></i></button>
-                                            <button class="video-btn" id="mute-unmute"><i class="fas fa-volume-mute"></i></button>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12 project-details">
                                     <div class="project-info">
-                                        <span class="project-category">BRANDING</span>
+                                        <span class="project-category">DESIGN GRAPHIQUE</span>
                                         <h4>Stratégie de marque complète avec repositionnement, identité visuelle renouvelée et guidelines détaillées.</h4>
-                                        <a href="https://projet-finale-nine.vercel.app/" class="project-link" target="_blank">visiter ce projet <i class="fas fa-arrow-right"></i></a>
+                                        <a href="contact.html" class="project-link">Obtenir un devis <i class="fas fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -245,9 +243,9 @@
                                 </div>
                                 <div class="col-lg-6 col-md-12 project-details">
                                     <div class="project-info">
-                                        <span class="project-category">DÉVELOPPEMENT WEB</span>
-                                        <h4>Plateforme e-commerce complète avec gestion de stock, paiements sécurisés et interface administrateur intuitive.</h4>
-                                        <a href=" https://projet-finale-nine.vercel.app/ " class="project-link">Obtenir un devis <i class="fas fa-arrow-right"></i></a>
+                                        <span class="project-category">SITE VITRINE POUR LA COMMUNE DE KOUMASSI</span>
+                                        <h4>Site vitrine moderne et immersif pour la commune de Koumassi.</h4>
+                                        <a href="https://projet-finale-nine.vercel.app/" class="project-link">visiter ce projet<i class="fas fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -449,11 +447,6 @@
             const nextButton = document.querySelector('.carousel-control.next');
             let currentIndex = 0;
             
-            // Éléments pour la vidéo
-            const video = document.getElementById('project-video');
-            const playPauseBtn = document.getElementById('play-pause');
-            const muteUnmuteBtn = document.getElementById('mute-unmute');
-            
             // Fonction pour mettre à jour le carrousel
             function updateCarousel() {
                 // Mettre à jour les slides
@@ -503,26 +496,106 @@
                 });
             });
             
-            // Contrôles de la vidéo
-            if (playPauseBtn && video) {
-                playPauseBtn.addEventListener('click', function() {
+            // Video controls - fixed version
+            function initializeVideoControls() {
+                const video = document.getElementById('project-video');
+                const playPauseBtn = document.getElementById('play-pause');
+                const muteUnmuteBtn = document.getElementById('mute-unmute');
+
+                if (!video || !playPauseBtn || !muteUnmuteBtn) {
+                    console.log('Video elements not found');
+                    return;
+                }
+
+                // Force initial state
+                video.muted = true;
+                video.loop = true;
+                
+                // Try to autoplay when slide becomes active
+                function tryAutoplay() {
+                    if (currentIndex === 1) { // Second slide (index 1)
+                        video.play().then(() => {
+                            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                        }).catch(e => {
+                            console.log('Autoplay failed:', e);
+                            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                        });
+                    } else {
+                        video.pause();
+                        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    }
+                }
+
+                // Play/Pause functionality
+                playPauseBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
                     if (video.paused) {
-                        video.play();
-                        this.innerHTML = '<i class="fas fa-pause"></i>';
+                        video.play().then(() => {
+                            this.innerHTML = '<i class="fas fa-pause"></i>';
+                        }).catch(e => {
+                            console.log('Play failed:', e);
+                        });
                     } else {
                         video.pause();
                         this.innerHTML = '<i class="fas fa-play"></i>';
                     }
                 });
-            }
-            
-            if (muteUnmuteBtn && video) {
-                muteUnmuteBtn.addEventListener('click', function() {
+
+                // Mute/Unmute functionality
+                muteUnmuteBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
                     video.muted = !video.muted;
                     this.innerHTML = video.muted ? 
                         '<i class="fas fa-volume-mute"></i>' : 
                         '<i class="fas fa-volume-up"></i>';
                 });
+
+                // Update buttons when video state changes
+                video.addEventListener('play', () => {
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                });
+
+                video.addEventListener('pause', () => {
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                });
+
+                // Initial button setup
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                muteUnmuteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+
+                return tryAutoplay;
+            }
+
+            // Initialize video controls and get the autoplay function
+            const tryAutoplay = initializeVideoControls();
+
+            // Update your existing updateCarousel function to include this:
+            function updateCarousel() {
+                // Your existing carousel update code...
+                slides.forEach((slide, index) => {
+                    if (index === currentIndex) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+                
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+
+                // Handle video autoplay/pause based on current slide
+                if (tryAutoplay) {
+                    tryAutoplay();
+                }
             }
             
             // Défilement automatique (optionnel)
@@ -560,26 +633,52 @@
                     }
                 });
             });
-            
-            // Menu mobile
-            const toggler = document.querySelector('.navbar-toggler');
-            const navbarCollapse = document.getElementById('navbarSupportedContent');
-            
-            if (toggler) {
-                toggler.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    navbarCollapse.classList.toggle('show');
-                });
-            }
-            
-            // Fermer le menu lorsqu'on clique sur un lien
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    toggler.classList.remove('active');
-                    navbarCollapse.classList.remove('show');
-                });
-            });
+// Enhanced Mobile Menu
+const toggler = document.querySelector('.navbar-toggler');
+const navbarCollapse = document.getElementById('navbarSupportedContent');
+
+if (toggler) {
+    toggler.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.toggle('active');
+        navbarCollapse.classList.toggle('show');
+        
+        // Add/remove body scroll lock when menu is open
+        if (navbarCollapse.classList.contains('show')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+// Close menu when clicking on nav links
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        toggler.classList.remove('active');
+        navbarCollapse.classList.remove('show');
+        document.body.style.overflow = '';
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', function(e) {
+    if (!toggler.contains(e.target) && !navbarCollapse.contains(e.target)) {
+        toggler.classList.remove('active');
+        navbarCollapse.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        toggler.classList.remove('active');
+        navbarCollapse.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+});
         });
 
         // Classes d'animation
